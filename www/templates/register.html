@@ -1,0 +1,120 @@
+<ion-view class="bodyenclose" title="fetswallet" >
+<ion-content   has-header="true"  >
+   <div class="logo_backgd"><img src="img/fets-logo.png" class="image_def2" ></div>
+        <div ng-show="showform" >
+        <form name="form" class="css-form" novalidate>
+            <div class="list  listshow">
+            <div class="item item-stable item-divider">
+            <h2 class="fetTitle">Register to fetswallet</h2>
+            <p class="errmsg" ng-show="authPay">{{authMsg}}</p>
+            <p class="sucmsg" ng-show="sucDisplay">{{sucMsg}}</p>
+            </div>
+           <!-- <div class="item item-input bcklist2 item-select">
+                <span class="input-label">Title</span>
+                <select ng-model="allval.title" ng-options="titled.title_nm for titled in titles | orderBy:'title_nm'" required>
+                 <option value="">-- Choose --</option>
+                </select>
+             </div>-->
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Phone Number</span>
+            <input type="tel" placeholder="Phone Number"  ng-blur="changePhone()" ng-model="allval.phone" required>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="First Name"  ng-model="allval.firstname"  required>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Last Name</span>
+            <input type="text" placeholder="Last Name"  ng-model="allval.lastname" required>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Mother Maiden Name</span>
+            <input type="text" placeholder="Mother Maiden Name"  ng-model="allval.maidname" required>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Gender(Sex)</span>
+            <div class="list">
+
+              <label class="item item-radio">
+                <input type="radio" value="1" ng-model="allval.sex" name="group">
+                <div class="item-content">
+                  Male
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+              </label>
+              <label class="item item-radio">
+                <input type="radio" value="2" ng-model="allval.sex" name="group">
+                <div class="item-content">
+                  Female
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+              </label>
+            
+            </div>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Address 1</span>
+            <textarea type="text" placeholder="Address 1" rows="3"  ng-model="allval.address1" required>{{allval.address1}}</textarea>
+            </div>
+            <!--<div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Date Of Birth</span>
+            <input type="date" placeholder="Date of birth"  ng-model="allval.dob" required>
+            </div>-->
+            <!--<div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Email</span>
+            <input type="email" placeholder="Phone Number"  ng-model="allval.email" required>
+            </div>-->
+            
+                <!--  <div class="item item-input bcklist2 item-select">
+                <span  class="input-label">
+                    State of Origin
+                </span >
+                <select ng-change="localgovB=''" ng-model="allval.states" ng-options="state.state_name for state in states | orderBy:'state_name'" required>
+                  <option value="">-- Choose --</option>
+                </select>
+                </div>
+                 <div class="item item-input bcklist2 item-select">
+                <span  class="input-label">
+                    L.G.A.
+                </span >
+                <select  ng-model="allval.localgov" ng-options="lga.localgovt_nm for lga in allval.states.localgov | orderBy:'localgovt_nm'" >
+                  <option value="">-- Choose --</option>
+                </select>
+                </div>
+                <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">City</span>
+            <input type="text" placeholder="City"  ng-model="allval.city" required>
+            </div>
+             <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Address 1</span>
+            <textarea type="text" placeholder="Address 1" rows="3"  ng-model="allval.address1" required>{{allval.address1}}</textarea>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Address 2</span>
+            <textarea type="text" placeholder="Address 2" rows="3"  ng-model="allval.address2" >{{allval.address2}}</textarea>
+            </div>-->
+            
+            <label class="item item-input bcklist2">
+              <button class="button button-full button-dark btnfull" ng-disabled="form.$invalid"  
+              ng-click="confirmphone()">Register</button>
+              </label>
+            </div>
+		</form>
+        </div>
+        <div ng-hide="showform" >
+        <div class="list card listshow">
+            <div class="item item-stable item-divider">
+            Confirm Phone Number 
+            </div>
+            <div class="item listplane item-text-wrap">
+            
+        	<p class="balcss">{{allval.phone}}</p>
+        </div>
+        <div class="item  bcklist2" >
+            <button class="button  button-dark "  ng-click="regCancel()">Cancel</button> &nbsp;
+            <button class="button  icon-left ion-locked button-dark  "    ng-click="register()">Continue</button>
+         </div>
+        </div>
+        </div>
+   </ion-content>
+      </ion-view>

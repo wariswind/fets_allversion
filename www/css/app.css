@@ -1,0 +1,73 @@
+/* CSS Document */
+body{font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif}
+#newbar{background:hsla(99,56%,55%,0.88); color:#222; text-align:left}
+html{ height:auto}
+/* CSS background for ion-view content */
+.bodyenclose{min-height:100%; background:url(../img/fets-back.jpg);background-size:cover; padding-bottom:20px; }
+.bodyenclose3{min-height:100%; background:url(../img/fets-back.jpg); background-size:cover; padding-bottom:20px; }
+.bodyenclose2{min-height:100%; background-color:#323030}
+
+/* ionic list style */
+#loglist{position:absolute; top:15em;  }
+.listshow{margin-top:1em; background:hsla(0,0%,39%,0.00); margin-bottom:2em;}
+#homelist{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; color:#222; font-weight:bold;background-color:hsla(0,40%,98%,0.00); margin-top:5em;}
+#homelist2{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; color:#222; font-weight:bold;background-color:hsla(0,40%,98%,0.00); margin-top:3em;}
+.bcklist{background-color:hsla(90,54%,37%,0.00); border-color:#999; font-size:1.2em;  padding-bottom:1.3em; padding-top:1.3em; }
+.bcklist i{font-size:1.2em; color:hsla(0,0%,23%,1.00);}
+.backBodyList{ color:#333}
+.backBodyList p{color:#333}
+.aboutListMg{margin-top:5em;}
+.aboutList{background:hsla(0,30%,96%,0.00)}
+.bcklist2{ background:hsla(0,0%,39%,0.39); border-color:#999; color:#666;}
+
+/* icon colors to sult fets colors*/
+i.addgreen{ color:#3BA61C}
+i.addorange{ color:#CB5527}
+i.addpurple{ color:#620759}
+
+
+/* image logo*/
+.logo_backgd{ text-align:center; background-color:hsla(0,13%,95%,0.00); padding:1.5em;}
+.image_def{width:23em; height:auto; }
+.image_def2{width:20em; height:auto; }
+
+/* ionic nav bar title and background*/
+.title{font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif; font-weight:bold}
+#barbgd{background:#434343 }
+h2.fetTitle{ font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif; }
+
+/* form inputs css*/
+input,button.btnfull,textarea{width:98%;}
+button{font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif}
+.input-label{color:#222}
+
+/* error msg css */
+p.errmsg{padding:3px; color:#9B1114; text-align:center; font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif}
+p.sucmsg{padding:3px; color:#093520; text-align:center; font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif}
+
+
+.item-radio{display:inline-block;}
+.item-radio .item-content{padding:10px 40px 10px 10px;}
+
+.css-form input.ng-invalid.ng-dirty {
+	  border:1px solid #BF1111;
+    }
+
+.loading{ background:hsla(0,0%,0%,0.00); padding: 5px; }
+.loading i{color:#000;}
+
+.col{
+ overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listplane{background:hsla(0,0%,86%,0.00); padding:10px;}
+
+.listLookUp{margin-bottom:3px; background:hsla(0,0%,0%,0.10); padding:7px 5px;}
+.btnpad{padding:2px 6px; margin-top:2px;}
+
+p.balcss{font-size:2.5em; font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; padding:1.5em 0px;}
+
+
+
+

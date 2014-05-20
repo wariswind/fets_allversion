@@ -1,0 +1,88 @@
+<ion-view title="Bills Payment" >
+<ion-content  class="bodyenclose3" has-header="true" >
+   <div class="logo_backgd"><img src="img/fets-logo.png" class="image_def2" ></div>
+   <div ng-show="showform" >
+   <form name="form" class="css-form" novalidate>
+   <div class="list card listshow">
+   			<div class="item item-stable item-divider">
+            Merchant Details
+            <p class="sucmsg" ng-show="sucDisplay">{{sucMsg}}</p>
+            </div>
+     <div class="item item-input item-select bcklist2">
+    <span  class="input-label">
+      Payment Category
+    </span >
+    <select ng-change="allval.productPrice=''" ng-model="merchants" ng-options="category.name for category in allcategories " required>
+      <option value="">-- Choose --</option>
+    </select>
+  </div>
+  <div class="item item-input item-select bcklist2">
+    <span  class="input-label">
+      Merchants
+    </span >
+    <select ng-change="allval.productPrice=''" ng-model="allval.products" ng-options="merchant.name for merchant in merchants.merchants" required>
+      <option value="">-- Choose --</option>
+    </select>
+  </div>
+  
+  <div class="item item-input bcklist2 item-select">
+    <div class="input-label">
+      Products
+    </div>
+    <select ng-change="allval.productPrice=allval.newProduct.price" ng-model="allval.newProduct" ng-options="product.name for product in allval.products.products" required>
+      <option value="">-- Choose --</option>
+    </select>
+   
+  </div>
+	<div class="item item-input bcklist2 item-stacked-label ">
+    <span class="input-label">Product Amount</span>
+    <input type="number" placeholder="Enter Amount of product"  ng-disabled="allval.newProduct.price" ng-model="allval.productPrice" required>
+  </div>
+  <div class="item item-input bcklist2 item-stacked-label ">
+    <span class="input-label">Remarks</span>
+    <textarea placeholder="Narate your payment" rows="4"  ng-model="allval.remarks" required>{{allval.remarks}}</textarea>
+  </div>
+  <label class="item item-input bcklist2">
+  <button class="button button-full button-dark btnfull" ng-disabled="form.$invalid"  ng-click="payment()">Make Payment</button>
+  </label>
+</div>
+</form>
+</div>
+<div ng-hide="showform" >
+<form name="form2" class="css-form" novalidate>
+<div class="list card listshow">
+<div class="item item-stable item-divider">
+    Wallet Confirmation
+    <p class="errmsg" ng-show="failDisplay">{{failMsg}}</p>
+  </div>
+  <li class="item listplane">
+            <div class="row">
+              <div class="col">Merchant</div>
+              <div class="col col-75">{{allval.products.name}}</div>
+            </div>
+            <div class="row">
+              <div class="col">Amount</div>
+              <div class="col col-75">{{allval.productPrice}}NGN</div>
+            </div>
+            <div class="row">
+              <div class="col">Charge</div>
+              <div class="col col-75">100.00NGN{{allval.billCharge}}</div>
+            </div>
+            </li>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Wallet Phone Number</span>
+            <input type="text" placeholder="Enter Wallet Number" disabled  ng-model="allval.walletID" required>
+            </div>
+<div class="item item-input bcklist2 item-stacked-label">
+<span class="input-label">Wallet Password</span>
+<input type="password" placeholder="Enter Wallet Password"  ng-model="allval.walletpasd"  required>
+</div>
+<div class="item  bcklist2 " >
+<button class="button  button-dark " ng-disabled="form.$invalid"  ng-click="PaymentCancel()">Cancel</button> &nbsp;
+  <button class="button  icon-left ion-locked button-dark  "  ng-disabled="form2.$invalid"  ng-click="PaymentConfirm()">Continue</button>
+  </div>
+</div>
+</form>
+</div>
+   </ion-content>
+</ion-view>

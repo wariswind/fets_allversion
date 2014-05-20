@@ -1,0 +1,85 @@
+<ion-view title="Wallet to Bank" >
+	<ion-content  class="bodyenclose3" has-header="true" padding="true" >
+   		<div class="logo_backgd"><img src="img/fets-logo.png" class="image_def2" ></div>
+        <div ng-show="showform" >
+        <form name="form" class="css-form" novalidate>
+            <div class="list card listshow">
+            <div class="item item-stable item-divider">
+            Beneficiary Lookup
+            <p class="sucmsg" ng-show="sucDisplay">{{sucMsg}}</p>
+            </div>
+            <div class="item item-input bcklist2 item-select">
+                <span  class="input-label">
+                    Bank
+                </span >
+                <select ng-model="allval.bank" ng-options="bank.name for bank in banks" required>
+                  <option value="">-- Select  bank --</option>
+                </select>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <p>{{allval.message}}</p>
+                <span class="input-label">Account Number</span>
+                <input type="number" placeholder="bank account number"  ng-model="allval.acctNumber" required>
+             </div>
+             
+            <label class="item item-input bcklist2" ng-hide="lookupCheck">
+              <button class="button button-full button-dark btnfull" ng-disabled="form.$invalid"  
+              ng-click="lookup()">Look Up</button>
+             </label>
+               <div class="item  bcklist2" ng-show="lookupCheck">
+                <button class="button  button-dark btnpad"  ng-click="transferCancel()">Cancel</button> &nbsp;
+                <button class="button  button-dark btnpad" ng-click="transferSave()">Save</button> &nbsp;
+                <button class="button  icon-left ion-locked button-dark  btnpad"   ng-click="transfer()">Do Tranfer</button>
+            </div>
+              </div>
+        </form>
+        <div class="list card listshow" >
+        <div class="item item-dark item-divider">
+               <h2>Your Beneficiaries List</h2>
+               </div>
+                <a class="item item-text-wrap listLookUp" href="#" ng-click="godirect(bankBen);$event.preventDefault()" ng-repeat="bankBen in bankBens" >
+                <h2>{{bankBen.account}}</h2>
+                <p>{{bankBen.accountname}}({{bankBen.bank}})</p>
+              </a>
+        </div>
+        </div>
+        <div ng-hide="showform" >
+        <form name="form2" class="css-form" novalidate>
+            <div class="list card listshow">
+            <div class="item item-stable item-divider">
+             Confirm Trans. (Bal: N{{authVal.walletAvailableBalance}})
+            <p class="errmsg" ng-show="failDispaly">{{failMsg}}</p>
+            </div>
+            <li class="item listplane">
+           
+            <div class="row">
+              <div class="col">Account</div>
+              <div class="col col-75">{{allval.account}}</div>
+            </div>
+            <div class="row">
+              <div class="col">Bank</div>
+              <div class="col col-75">{{allval.bankname}}</div>
+            </div>
+            </li>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">From Wallet</span>
+            <input type="text" placeholder="Enter Wallet Number" disabled  ng-model="allval.walletID" required>
+            </div>
+          	<div class="item item-input bcklist2 item-stacked-label">
+                <span class="input-label">Amount</span>
+                <input type="number" placeholder="Enter amount"  ng-model="allval.amount" required>
+             </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Wallet Password</span>
+            <input type="password" placeholder="Enter Wallet Password"  ng-model="allval.walletpasd"  required>
+            </div>
+            <div class="item  bcklist2" >
+            <button class="button  button-dark "   ng-click="bankCancel()">Cancel</button> &nbsp;
+            <button class="button  icon-left ion-locked button-dark  "  ng-disabled="form2.$invalid"  ng-click="bankConfirm()">Transfer
+            </button>
+            </div>
+            </div>
+		</form>
+        </div>
+        </ion-content>
+</ion-view>

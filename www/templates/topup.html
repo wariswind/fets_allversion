@@ -1,0 +1,104 @@
+<ion-view title="TopUp Details" >
+	<ion-content  class="bodyenclose3" has-header="true" >
+   		<div class="logo_backgd"><img src="img/fets-logo.png" class="image_def2" ></div>
+        <div ng-show="showform" >
+        <form name="form" class="css-form" novalidate>
+            <div class="list card listshow" >
+            <div class="item item-stable item-divider">
+            TopUp Details
+            <p class="sucmsg" ng-show="sucDisplay">{{sucMsg}}</p>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Usage</span>
+            <ul class="list">
+
+              <label class="item item-radio">
+                <input type="radio" value="1" ng-model="allval.self" name="group" required>
+                <div class="item-content">
+                  Self
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+              </label>
+              <label class="item item-radio">
+                <input type="radio" value="2" ng-model="allval.self" name="group" required>
+                <div class="item-content">
+                  Other Number
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+              </label>
+            </ul>
+            </div>
+                <div ng-if="allval.self=='2'" class="item item-input bcklist2 item-stacked-label">
+                    <span class="input-label">Mobile Number</span>
+                    <input type="tel" placeholder="Enter Mobile Number" ng-minlength="11" ng-maxlegth="14" ng-change="changePhone()" ng-model="allval.phone" required>
+                 </div>
+                <div  class="item item-input bcklist2 item-select">
+                <span  class="input-label">
+                    Network
+                </span >
+                <select ng-change="topupPrice=''" ng-model="allval.allcards" ng-options="network.name for network in networks" required>
+                  <option value="">-- Select  Network --</option>
+                </select>
+                </div>
+                <div class="item item-input bcklist2 item-select">
+                <div class="input-label">
+                  Topup Value
+                </div>
+                <select ng-change="allval.topupPrice=allval.newCard.price" ng-model="allval.newCard" ng-options="card.name for card in allval.allcards.products" 
+                required>
+                  <option value="">-- Select Value --</option>
+                </select>
+              
+              </div>
+              <label class="item item-input bcklist2">
+              <button class="button button-full button-dark btnfull" ng-disabled="form.$invalid"  ng-click="topup()">Top Up</button>
+              </label>
+            </div>
+        </form>
+        </div>
+        
+        <div ng-hide="showform" >
+        <form name="form2" class="css-form" novalidate>
+            <div class="list card listshow">
+            <div class="item item-stable item-divider">
+            Wallet Confirmation
+            <p class="errmsg" ng-show="failDisplay">{{failMsg}}</p>
+            </div>
+            <li class="item listplane">
+            <div class="row">
+              <div class="col">Network</div>
+              <div class="col col-75">{{allval.allcards.name}}</div>
+            </div>
+            <div class="row">
+              <div class="col">Value</div>
+              <div class="col col-75">{{allval.topupPrice}}NGN</div>
+            </div>
+            <div class="row">
+              <div class="col">Beneficiary</div>
+              <div class="col col-75">{{allval.benNumber}}</div>
+            </div>
+            <div class="row">
+              <div class="col">Charge</div>
+              <div class="col col-75">0.00NGN</div>
+            </div>
+            </li>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Wallet Phone Number</span>
+            <input type="text" placeholder="Enter Wallet Number" disabled  ng-model="allval.walletID" required>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Wallet Password</span>
+            <input type="password" placeholder="Enter Wallet Password"  ng-model="allval.walletpasd"  required>
+            </div>
+            <div class="item  bcklist2" >
+            <button class="button  button-dark " ng-disabled="form.$invalid"  ng-click="topupCancel()">Cancel</button> &nbsp;
+            <button class="button  icon-left ion-locked button-dark  "  ng-disabled="form2.$invalid"  ng-click="topupConfirm()">Continue</
+            button>
+            </div>
+            </div>
+		</form>
+        </div>
+   
+
+	</ion-content>
+</ion-view>

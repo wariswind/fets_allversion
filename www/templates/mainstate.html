@@ -1,0 +1,26 @@
+<!-- 
+      This is an abstract layout that house other pages of the app.
+      
+    -->
+<ion-side-menus>
+        
+        <ion-pane ion-side-menu-content>
+          
+          <ion-nav-bar class="bar-calm" id="barbgd" >
+            <ion-nav-back-button class="button button-icon button-clear ion-chevron-left">
+  			</ion-nav-back-button>
+          </ion-nav-bar>
+          
+          <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+            </button>
+          </ion-nav-buttons>
+          <ion-nav-view name="menuContent"></ion-nav-view>
+        </ion-pane> 
+        
+        
+        <ion-side-menu side="right" >
+        <ion-nav-view name="menuRight"></ion-nav-view>
+  		</ion-side-menu>
+        
+      </ion-side-menus>

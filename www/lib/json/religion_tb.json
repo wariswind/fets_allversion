@@ -1,0 +1,9 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'fets_ref'
+// fets_ref.religion_tb
+
+[{"religion_id":"1","religion_nm":"African Traditional & Diasporic"}, {"religion_id":"2","religion_nm":"Baha"}, {"religion_id":"3","religion_nm":"Cao Dai"}, {"religion_id":"4","religion_nm":"Chinese traditional religion"}, {"religion_id":"5","religion_nm":"Christianity"}, {"religion_id":"6","religion_nm":"Hinduism"}, {"religion_id":"7","religion_nm":"Islam"}, {"religion_id":"8","religion_nm":"Jainism"}, {"religion_id":"9","religion_nm":"Juche"}, {"religion_id":"10","religion_nm":"Judaism"}, {"religion_id":"11","religion_nm":"Neo -Paganism"}, {"religion_id":"12","religion_nm":"primal- indigenous"}, {"religion_id":"13","religion_nm":"Rastafarianism"}, {"religion_id":"14","religion_nm":"Scientology "}, {"religion_id":"15","religion_nm":"Secular\/Nonreligious\/Agnostic\/Atheist"}, {"religion_id":"16","religion_nm":"Shinto"}, {"religion_id":"17","religion_nm":"Sikhism"}, {"religion_id":"18","religion_nm":"Spiritism "}, {"religion_id":"19","religion_nm":"Tenrikyo"}, {"religion_id":"20","religion_nm":"Unitarian-Universalism"}, {"religion_id":"21","religion_nm":"Zoroastrianism"}]

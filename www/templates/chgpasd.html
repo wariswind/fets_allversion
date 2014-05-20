@@ -1,0 +1,30 @@
+<ion-view title="fetswallet" >
+<ion-content  class="bodyenclose3" has-header="true" >
+   <div class="logo_backgd"><img src="img/fets-logo.png" class="image_def2" ></div>
+   
+   <form name="form" class="css-form" novalidate>
+    <div class="list card listshow">
+   			<div class="item item-stable item-divider">
+            Password Manager(<b>{{allval.phone}}</b>)
+            <p class="errmsg" ng-show="failDisplay">{{failMsg}}</p>
+            <p class="sucmsg" ng-show="sucDisplay">{{sucMsg}}</p>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label ">
+            <span class="input-label">Old password</span>
+            <input type="password" placeholder="Old Password"   ng-model="allval.oldpasd" required>
+          </div>
+          <div class="item item-input bcklist2 item-stacked-label ">
+            <span class="input-label">New password</span>
+            <input type="password" placeholder="New Password"   ng-model="allval.newpasd"  required>
+          </div>
+          <div class="item item-input bcklist2 item-stacked-label ">
+            <span class="input-label">New password</span>
+            <input type="password" placeholder="Confirm New Password"   ng-model="allval.newpasd2" data-match="allval.newpasd" required>
+          </div>
+          <label class="item item-input bcklist2">
+          <button class="button button-full button-dark btnfull" ng-disabled="form.$invalid"  ng-click="changePassd()">Change Password</button>
+          </label>
+   </form>
+   
+ </ion-content>
+</ion-view>

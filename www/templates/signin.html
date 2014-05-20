@@ -1,0 +1,28 @@
+<ion-view class="bodyenclose" title="fetswallet" >
+<ion-content    >
+  <div class="logo_backgd"><img src="img/fets-logo.png" class="image_def2" ></div>
+        <div ng-show="showform" >
+        <form name="form" class="css-form" novalidate>
+            <div class="list  listshow">
+            <div class="item item-stable item-divider">
+            <h2 class="fetTitle">Sign In to fetswallet</h2>
+            <p class="errmsg" ng-show="authPay">{{authMsg}}</p>
+            <p class="sucmsg" ng-show="sucDisplay">{{sucMsg}}</p>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Phone Number</span>
+            <input type="tel" placeholder="phone number"  ng-blur="changePhone()" ng-disabled="allval.phone" name="phone" ng-model="allval.walletid" required>
+            </div>
+            <div class="item item-input bcklist2 item-stacked-label">
+            <span class="input-label">Password</span>
+            <input type="password" placeholder="Wallet Password"  ng-model="allval.walletpasd"  required>
+            </div>
+            <label class="item item-input bcklist2">
+              <button class="button button-full button-dark btnfull" ng-disabled="form.$invalid"  
+              ng-click="login()">Sign In</button>
+              </label>
+            </div>
+		</form>
+        </div>
+   </ion-content>
+      </ion-view>

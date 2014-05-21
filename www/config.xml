@@ -23,7 +23,7 @@
         permission on your app, which PhoneGap requires.
     -->
 	
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="org.apache.cordova.childbrowser" />
     <preference name="permissions"                value="none"/>
 	<preference name="splash-screen-duration" value="30000"/>
     <!-- Customize your app and platform with the preference element. -->
